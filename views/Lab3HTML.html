@@ -8,7 +8,7 @@
 <body>
 
 <!--create unordered empty list to be filled by user-->
-<ul id="my_list"></ul>
+<ul id="list"></ul>
 <!--create input textbox and button to add items-->
 <input type="text" name="textbox" id="text">
 <!--<button onclick="addToList()">Add this to the list</button>-->
@@ -27,7 +27,7 @@
             var listLine = document.createElement("li");
             listLine.innerHTML = input;
 
-            var listInput = document.getElementById('list');
+            var listInput = document.getElementById("list");
             listInput.appendChild(listLine);
             console.log(listLine.innerHTML);
             document.getElementById('text').value = "";
