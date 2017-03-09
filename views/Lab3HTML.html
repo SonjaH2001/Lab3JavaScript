@@ -10,14 +10,35 @@
 <!--create unordered empty list to be filled by user-->
 <ul id="my_list"></ul>
 <!--create input textbox and button to add items-->
-<input type="text" name="text" id="text">
-<button onclick="addToList()">Add this to the list</button>
-
+<input type="text" name="textbox" id="text">
+<!--<button onclick="addToList()">Add this to the list</button>-->
+<button type="button" name="button" id="button">ENTER</button>
 
 <script>
 
+    document.getElementById('button').addEventListener("click", addToList);
 
+    function addToList() {
+
+        var input = document.getElementById('text').value;
+
+        if ((input != "") && (input.length < 51)) {
+
+            var listLine = document.createElement("li");
+            listLine.innerHTML = input;
+
+            var listInput = document.getElementById('list');
+            listInput.appendChild(listLine);
+            console.log(listLine.innerHTML);
+            document.getElementById('text').value = "";
+        }
+
+        else {
+            alert("Please check your input");
+        }
+    }
 </script>
+
 <!--Part 1: Create a web page with an empty unordered list,
 a input text box, and button.
 When the user types text into the input form and clicks the button,
